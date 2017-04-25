@@ -1,0 +1,11 @@
+name: Bedwars
+version: 3.0
+api: 1.14.0
+main: Bluplayz\Bedwars
+author: NetherTechnology
+commands:
+    Bedwars:
+        description: Bedwars Main Command
+        aliases: [bw]
+    Start:
+        description: Bedwars Forcestart Command
