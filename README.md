@@ -1,6 +1,9 @@
 # Update!
+# 3.3.0b4
+- Updating to the Exp spawner - 100%
+- Updating to the Village - 0%
 # 3.3.0b3
-- Updating!!
+- Fixed File name's crash!
 # 3.3.0b2
 - Added enchanting table
 - Added Exp system
