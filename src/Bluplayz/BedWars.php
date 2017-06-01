@@ -147,16 +147,25 @@ class Bedwars extends PluginBase implements Listener {
 					Item::BREAD,
                     array(
                         array(
-                            Item::BREAD, 5, 336, 20
+                            Item::BREAD, 1, 336, 10
                         ),
                         array(
-                            Item::MUSHROO_STEW, 1, 266, 5
+                            Item::STEAK, 1, 265, 5
                         ),
                         array(
-                            Item::APPLE, 1, 336, 2
+                            Item::CAKE, 1, 266, 10
                         ),
                         array(
-                            Item::GOLDEN_APPLE, 1, 264, 10
+                            Item::GOLDEN_APPLE, 1, 264, 5
+                        )
+                    ),
+					Item::EXPERIENCE_BOTTLE,
+                    array(
+                        array(
+                            Item::EXPERIENCE_BOTTLE, 1, 264, 10
+                        ), 
+                        array(
+                            Item::ENCHANTING_TABLE, 1, 264, 20
                         )
                     ),
 					Item::BOW,
@@ -181,24 +190,6 @@ class Bedwars extends PluginBase implements Listener {
                         ),
                         array(
                             Item::DIAMOND_SWORD, 1, 264, 5
-                        )
-                    ),
-					Item::BLASE_ROD,
-                    array(
-                        array(
-                            Item::SNOWBALL, 2, 265, 10
-                        ),
-                        array(
-                            Item::ENDER_PEARL, 1, 264, 10
-                        )
-                    ),
-					Item::EXPERIENCE_BOTTLE,
-                    array(
-                        array(
-                            Item::DYE:4, 2, 265, 10
-                        ),
-                        array(
-                            Item::ENCHANTING_TABLE, 1, 264, 10
                         )
                     ),
                     Item::IRON_CHESTPLATE,
@@ -1422,7 +1413,7 @@ class Bedwars extends PluginBase implements Listener {
                     $sender->sendMessage(TextFormat::GRAY."-> ".TextFormat::DARK_AQUA."/bw help ".TextFormat::GRAY."[".TextFormat::RED."Displays all Bedwars Commands".TextFormat::GRAY."]");
                     $sender->sendMessage(TextFormat::GRAY."-> ".TextFormat::DARK_AQUA."/bw regsign <Arena> ".TextFormat::GRAY."[".TextFormat::RED."Register a sign for a arena".TextFormat::GRAY."]");
                     $sender->sendMessage(TextFormat::GRAY."-> ".TextFormat::DARK_AQUA."/bw savemaps <Arena> ".TextFormat::GRAY."[".TextFormat::RED."Secures all the worlds of an arena".TextFormat::GRAY."]");
-                    $sender->sendMessage(TextFormat::GRAY."-> ".TextFormat::DARK_AQUA."/bw addarena <ArenaName> <Teams> <PlayerPreTeam> ".TextFormat::GRAY."[".TextFormat::RED."Add a new arena".TextFormat::GRAY."]");
+                    $sender->sendMessage(TextFormat::GRAY."-> ".TextFormat::DARK_AQUA."/bw addarena <ArenaName> <Teams> <SpielerProTeam> ".TextFormat::GRAY."[".TextFormat::RED."Add a new arena".TextFormat::GRAY."]");
                     $sender->sendMessage(TextFormat::GRAY."-> ".TextFormat::DARK_AQUA."/bw setlobby <Arena>".TextFormat::GRAY."[".TextFormat::RED."Set The Arena lobby".TextFormat::GRAY."]");
                     $sender->sendMessage(TextFormat::GRAY."-> ".TextFormat::DARK_AQUA."/bw setspawn <Arena> <Team>".TextFormat::GRAY."[".TextFormat::RED."Sets the team spawns".TextFormat::GRAY."]");
                     $sender->sendMessage(TextFormat::GRAY."-> ".TextFormat::DARK_AQUA."/bw setbed <Arena> <Team>".TextFormat::GRAY."[".TextFormat::RED."Sets the team beds".TextFormat::GRAY."]");
@@ -1543,7 +1534,13 @@ class Bedwars extends PluginBase implements Listener {
                     } else {
                         $sender->sendMessage(TextFormat::RED."/bw setspawn <ArenaName> <Team>");
                     }
+                }
+                elseif(strtolower($args[0]) == "test" && $sender->isOP()){
+                    $this->createVillager($sender->getX(), $sender->getY(), $sender->getZ(), $sender->getLevel());
                 } else {
+                    $this->getServer()->dispatchCommand($sender, "bw help");
+                }
+            } else {
                 $this->getServer()->dispatchCommand($sender, "bw help");
             }
         }
@@ -1722,6 +1719,7 @@ class BWGameSender extends PluginTask {
                                     $this->plugin->removePlayerFromArena($arena, $pn);
                                 }
                             }
+/*
                             $tiles = $level->getTiles();
                             foreach ($tiles as $tile) {
                                 if ($tile instanceof Sign) {
@@ -1733,7 +1731,7 @@ class BWGameSender extends PluginTask {
                                     }
                                 }
                             }
-                            
+                            */
 
                             $config->set("Status", "Ingame");
                             $config->save();
@@ -1794,6 +1792,17 @@ class BWGameSender extends PluginTask {
                                     $text = $tile->getText();
                                     if (strtolower($text[0]) == "diamond" || strtolower($text[1]) == "diamond" || strtolower($text[2]) == "diamond" || strtolower($text[3]) == "diamond") {
                                         $level->dropItem(new Vector3($tile->getX() + 0.5, $tile->getY() + 2, $tile->getZ() + 0.5), Item::get(Item::DIAMOND, 0, 1));
+                                    }
+                                }
+                            }
+                        }
+						if ((Time() % 60) == 0) {
+                            $tiles = $level->getTiles();
+                            foreach ($tiles as $tile) {
+                                if ($tile instanceof Sign) {
+                                    $text = $tile->getText();
+                                    if (strtolower($text[0]) == "Exp" || strtolower($text[1]) == "Exp" || strtolower($text[2]) == "Exp" || strtolower($text[3]) == "Exp") {
+                                        $level->dropItem(new Vector3($tile->getX() + 0.5, $tile->getY() + 2, $tile->getZ() + 0.5), Item::get(Item::EXPERIENCE_BOTTLE, 0, 1));
                                     }
                                 }
                             }
