@@ -1,0 +1,29 @@
+# 2017_6_1
+Items Cost(SHOP)
+-   Blocks              - Cost
+- - 64 SandStone          - 1  brick
+- - 12 Glass              - 5  bricks
+- - 2  Obsidian           - 1  diamond
+- - 1  WOODEN_PICKAXE     - 1  brick
+- - 1  STONE_PICKAXE      - 1  iron
+- - 1  IRON_PICKAXE       - 5  golds
+- - 1  DIAMOND_PICKAXE    - 2  diamonds
+- - 10 BREAD              - 1  brick
+- - 10 STEAK              - 5  iron
+- - 1  CAKE               - 1  gold
+- - 2  GOLDEN_APPLE       - 1  diamond
+- - 64 EXP_BOTTLE         - 2  diamonds
+- - 64 ENCHANTING_TABLE   - 5  diamonds
+- - 1  BOW                - 2  golds
+- - 64 ARROW              - 1  golds
+- - 1  WOODEN_SWORD       - 1  brick
+- - 1  STONE_SWORD        - 1  iron
+- - 1  IRON_SWORD         - 5  irons
+- - 1  DIAMOND_SWORD      - 2  diamonds
+- - 1  LEATHER_CAP        - 1  brick
+- - 1  LEATHER_PANTS      - 1  brick
+- - 1  LEATHER_BOOTS      - 1  brick
+- - 1  LEATHER_TUNIC      - 1  brick
+- - 1  CHAIN_CHESTPLATE   - 1  iron
+- - 1  IRON_CHESTPLATE    - 10 irons
+- - 1  DIAMOND_CHESTPLATE - 1  gold
