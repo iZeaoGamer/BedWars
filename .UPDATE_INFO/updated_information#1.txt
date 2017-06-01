@@ -1,0 +1,7 @@
+#2017_6_1
+Spawner's spawning rate
+- Birck- 5 per 1 sec
+- Iron- 3 per 2 sec
+- Gold- 3 per 5 sec
+- Exp- 2 per 5 sec
+- Diamond- 2 per 10 sec
