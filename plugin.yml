@@ -1,11 +1,9 @@
-name: Bedwars
-version: 3.3.0.b4
+name: Bedwars_Insane_Mode
+version: 1.0.0
 api: 1.14.0
-main: Bluplayz\BedWars
+main: Bedwars_Insane_Mode\Bedwars
 author: NetherTechnology
 commands:
-    Bedwars:
-        description: Bedwars Main Command
-        aliases: [bw]
-    Start:
-        description: Bedwars Forcestart Command
+    InsaneBedWars:
+        description: Bedwars_Insane_Mode Main Command
+        aliases: [ibw]
