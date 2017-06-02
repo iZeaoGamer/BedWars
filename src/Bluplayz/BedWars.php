@@ -108,7 +108,7 @@ class Bedwars extends PluginBase implements Listener {
             $cfg->save();
         }
         if(empty($cfg->get("BreakableBlocks"))){
-            $cfg->set("BreakableBlocks", array(Item::SANDSTONE, Item::CHEST));
+            $cfg->set("BreakableBlocks", array(Item::SANDSTONE, Item::GLASS, Item::OBSIDIAN, Item::CAKE, Item::ENCHANTING_TABLE));
             $cfg->save();
         }
         $this->breakableblocks = $cfg->get("BreakableBlocks");
@@ -164,6 +164,9 @@ class Bedwars extends PluginBase implements Listener {
                         array(
                             Item::EXPERIENCE_BOTTLE, 1, 264, 10
                         ), 
+						array(
+                            Item::BOOK, 5, 266, 10
+                        ),
                         array(
                             Item::ENCHANTING_TABLE, 1, 264, 20
                         )
