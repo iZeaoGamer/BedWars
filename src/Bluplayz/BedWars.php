@@ -159,11 +159,8 @@ class Bedwars extends PluginBase implements Listener {
                             Item::GOLDEN_APPLE, 1, 264, 5
                         )
                     ),
-					Item::EXPERIENCE_BOTTLE,
+					Item::ENCHANTING_TABLE,
                     array(
-                        array(
-                            Item::EXPERIENCE_BOTTLE, 1, 264, 10
-                        ), 
 						array(
                             Item::BOOK, 5, 266, 10
                         ),
@@ -1083,7 +1080,7 @@ class Bedwars extends PluginBase implements Listener {
             if($this->inArena($player)){
 
                 if(!in_array($event->getItem()->getId(), $this->pickup)) {
-                    if ($event->getItem()->getItem()->getId() == Item::EXPERIENCE_BOTTLE) {
+                    if ($event->getItem()->getItem()->getId() == Item::EMERALD) {
 
                         $event->setCancelled();
 
@@ -1805,7 +1802,7 @@ class BWGameSender extends PluginTask {
                                 if ($tile instanceof Sign) {
                                     $text = $tile->getText();
                                     if (strtolower($text[0]) == "Exp" || strtolower($text[1]) == "Exp" || strtolower($text[2]) == "Exp" || strtolower($text[3]) == "Exp") {
-                                        $level->dropItem(new Vector3($tile->getX() + 0.5, $tile->getY() + 2, $tile->getZ() + 0.5), Item::get(Item::EXPERIENCE_BOTTLE, 0, 1));
+                                        $level->dropItem(new Vector3($tile->getX() + 0.5, $tile->getY() + 2, $tile->getZ() + 0.5), Item::get(Item::EMERALD, 0, 1));
                                     }
                                 }
                             }
