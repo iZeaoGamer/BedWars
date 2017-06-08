@@ -1,8 +1,5 @@
 # Update!
-# 3.3.0b6
-- updating
-# 3.3.0b5
-- updated shop (add book)
-- updated breakable blocks
+# 3.3.0b7
+- Fixed Exp Crashed
 # Bedwars
-A PocketMine pugins that using PHP, The Bedwars plugins is ome of the most famous plguins in the World.
+A PocketMine pugins that using PHP, The Bedwars plugins is ome of the most famous plugins in the World.
