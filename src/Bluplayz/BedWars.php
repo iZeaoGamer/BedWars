@@ -106,12 +106,16 @@ class Bedwars extends PluginBase implements Listener {
         if(empty($cfg->get("EndTimer"))){
             $cfg->set("EndTimer", 16);
             $cfg->save();
-        }
+	}
         if(empty($cfg->get("BreakableBlocks"))){
             $cfg->set("BreakableBlocks", array(Item::SANDSTONE, Item::GLASS, Item::OBSIDIAN, Item::CAKE, Item::ENCHANTING_TABLE));
             $cfg->save();
         }
         $this->breakableblocks = $cfg->get("BreakableBlocks");
+        $this->breakableblocks = $cfg->get("BreakableBlocks");
+	if(!is_file($this->getDataFolder()."messages.yml")){
+	file_put_contents($dir."messages.yml", $this->getResource("messages.yml"));
+	}
         $shop = new Config($this->getDataFolder()."shop.yml", Config::YAML);
 
         if ($shop->get("Shop") == null) {
