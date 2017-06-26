@@ -1,5 +1,5 @@
 # Update!
-# 3.5.0b2&3.6.0b3
+# bugs test ver.#3
 - Fixed Villager Shop
 - Test messages file
 # Bedwars
