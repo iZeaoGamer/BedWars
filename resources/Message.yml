@@ -1,32 +1,19 @@
 
 /*   NetherTechnology's BedWars message config
-              English by KitrosMC
-Website:http://github.com/NetherTechnology/BedWars*/
+*              English by KitrosMC
+*Website:http://github.com/NetherTechnology/BedWars*/
 ingame:
  started:
   info: "The game has been started! Good Luck!"
  stoped:
   lose: "You had losen this game"
   win: "You had been won!"
- buy:
-  inv-full: "Your inventory is full!:
-  no-money: "You have no enough money!"
-  shop: "SHOP"
- sayall:
-  prefix: "ALL"
-  tosay: "In game if you want to say to all poeple, plz type before the message @"
- spawner:
-  title:
-   b: "brick"
-   i: "iron"
-   g: "gold"
-   d: "diamond"
  team:
   bd: "Team: %s bed has been distoryed!"
-  alldead: "Team %s destoryed"
-  join: "%s join your team!"
-  leave: "%s leave your team!"
-  partners: "Players of your team: %s"
+  kp: "You cant kill your team's player!"
  commands:
   no-perm: "You have no permission!"
   cant-use: "You cant use it here!"
+ kill:
+  kb: "You are killed by:%s!"
+  k: "%s has killed %x!"
