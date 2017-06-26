@@ -112,9 +112,8 @@ class Bedwars extends PluginBase implements Listener {
             $cfg->save();
         }
         $this->breakableblocks = $cfg->get("BreakableBlocks");
-        $this->breakableblocks = $cfg->get("BreakableBlocks");
 	if(!is_file($this->getDataFolder()."messages.yml")){
-	file_put_contents($dir."messages.yml", $this->getResource("messages.yml"));
+	file_put_contents($this->getDataFolder()."messages.yml", $this->getResource("messages.yml"));
 	}
         $shop = new Config($this->getDataFolder()."shop.yml", Config::YAML);
 
