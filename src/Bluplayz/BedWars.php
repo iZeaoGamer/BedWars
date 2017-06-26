@@ -1049,6 +1049,7 @@ class Bedwars extends PluginBase implements Listener {
     public function onRespawn(PlayerRespawnEvent $event){
         $player = $event->getPlayer();
         $name = $player->getName();
+	$message = $this->getDataFolder()->getFile()."message.yml";
 
         if($this->inArena($player)){
             $arena = $this->getArena($player);
@@ -1068,7 +1069,7 @@ class Bedwars extends PluginBase implements Listener {
                 $event->setRespawnPosition(new Position($x, $y, $z, $level));
             } else {
                 $event->setRespawnPosition($this->getServer()->getDefaultLevel()->getSafeSpawn());
-                $player->sendMessage($this->prefix.TextFormat::RED."Your bed has been destroyed, you can no longer respawn!");
+                $player->sendMessage($message("ingame.stopped.lose"));
                 $this->removePlayerFromArena($arena, $name);
                 $this->lasthit[$player->getName()] = "no";
                 $player->setNameTag($player->getName());
@@ -1277,15 +1278,15 @@ class Bedwars extends PluginBase implements Listener {
                         $config->save();
                         $event->setDrops(array());
 
-                        $player->sendMessage($this->prefix . "You got the bed of team " . $team . " destroyed!");
+                        $player->sendMessage($message("ingame.stopped.bd"));
 
                         foreach ($this->getPlayers($arena) as $pn) {
                             $p = $this->getServer()->getPlayerExact($pn);
                             if ($p != null) {
                                 if ($team == $this->getTeam($p->getNameTag())) {
-                                    $p->sendMessage($this->prefix . TextFormat::RED . "Your team's bed has been destroyed!");
+                                    $p->sendMessage($message("ingame.stopped.bd"));
                                 } else {
-                                    $p->sendMessage($this->prefix . "The bed of team " . TextFormat::GOLD . $team . TextFormat::WHITE . " was destroyed!");
+                                    $p->sendMessage($message("ingame.stopped.bd"));
                                 }
 
                             }
